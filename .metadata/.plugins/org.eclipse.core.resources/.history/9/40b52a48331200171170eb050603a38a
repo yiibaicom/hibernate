@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.yiibai.Question" table="q102">
+		<id name="id">
+			<generator class="increment"></generator>
+		</id>
+		<property name="qname"></property>
+
+		<set name="answers" cascade="all">
+			<key column="qid"></key>
+			<one-to-many class="com.yiibai.Answer" />
+		</set>
+	</class>
+
+</hibernate-mapping>

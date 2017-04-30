@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE values>
+
+<values>
+  <value name="${classnameWithoutSuffix}">
+    <path name="ejb.bean:class.name" />
+    <parsing />
+  </value>
+  <value name="${classname}">
+    <path name="ejb.bean:class.name" />
+    <parsing />
+  </value>
+  <value name="${classnameWithoutSuffix}">
+    <path name="ejb.bean:class.display-name" />
+    <parsing />
+  </value>
+  <value name="${classname}">
+    <path name="ejb.bean:class.display-name" />
+    <parsing />
+  </value>
+  <value name="${classnameWithoutSuffix}HomeRemote">
+    <path name="ejb.bean:class.jndi-name" />
+    <parsing />
+  </value>
+  <value name="${classname}HomeRemote">
+    <path name="ejb.bean:class.jndi-name" />
+    <parsing />
+  </value>
+  <value name="${classnameWithoutSuffix}HomeLocal">
+    <path name="ejb.bean:class.local-jndi-name" />
+    <parsing />
+  </value>
+  <value name="${classname}HomeLocal">
+    <path name="ejb.bean:class.local-jndi-name" />
+    <parsing />
+  </value>
+  <value name="${classnameWithoutSuffix}">
+    <path name="ejb.bean:class.scheme" />
+    <parsing />
+  </value>
+  <value name="${classname}">
+    <path name="ejb.bean:class.scheme" />
+    <parsing />
+  </value>
+  <value name="${classnameWithoutSuffix}">
+    <path name="ejb.dao:class.pattern" />
+    <parsing />
+  </value>
+  <value name="${classname}">
+    <path name="ejb.dao:class.pattern" />
+    <parsing />
+  </value>
+</values>
+

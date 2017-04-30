@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="hibernate-struts2 Maven Webapp">
+        <property name="context-root" value="/hibernate-struts2"/>
+        <property name="java-output-path" value="/hibernate-struts2 Maven Webapp/src/main/webapp/WEB-INF/classes"/>
+    </wb-module>
+</project-modules>

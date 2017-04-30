@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;hibernate-struts2 Maven Webapp/src/main/java/com/journaldev&apos; to &apos;yiibai&apos;" description="Rename resource &apos;journaldev&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/java/com/journaldev" name="yiibai" stamp="1490795315014" updateReferences="true"/>
+</session>

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.yiibai.Question" table="q102">
+		<id name="id">
+			<generator class="increment"></generator>
+		</id>
+		<property name="qname"></property>
+
+		<set name="answers" table="a1002"
+				inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id" not-null="true" />
+            </key>
+            <many-to-one name="stock" class="com.mkyong.stock.Stock" fetch="select">
+            	<column name="STOCK_ID" not-null="true" />
+        	</many-to-one>
+        </set>
+        
+	</class>
+
+</hibernate-mapping>

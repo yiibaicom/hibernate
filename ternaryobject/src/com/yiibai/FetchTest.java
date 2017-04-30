@@ -1,0 +1,53 @@
+package com.yiibai;
+
+import java.util.*;
+import org.hibernate.*;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.*;
+
+public class FetchTest {
+	public static void main(String[] args) {
+		// 在5.1.0版本中，hibernate则采用如下新方式获取：
+		// 1. 配置类型安全的准服务注册类，这是当前应用的单例对象，不作修改，所以声明为final
+		// 在configure("cfg/hibernate.cfg.xml")方法中，如果不指定资源路径，默认在类路径下寻找名为hibernate.cfg.xml的文件
+		final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+				.configure("hibernate.cfg.xml").build();
+		// 2. 根据服务注册类创建一个元数据资源集，同时构建元数据并生成应用一般唯一的的session工厂
+		SessionFactory sessionFactory = new MetadataSources(registry)
+				.buildMetadata().buildSessionFactory();
+
+		/**** 上面是配置准备，下面开始我们的数据库操作 ******/
+		Session session = sessionFactory.openSession();// 从会话工厂获取一个session
+
+		// creating transaction object
+		Transaction t = session.beginTransaction();
+
+		Query query = session.createQuery("from Question ");
+		List<Question> list = query.list();
+
+		Iterator<Question> iterator = list.iterator();
+		while (iterator.hasNext()) {
+			Question question = iterator.next();
+			System.out.println("question id:" + question.getId());
+			System.out.println("question name:" + question.getName());
+			System.out.println("answers.....");
+			Map<String, User> map = question.getAnswers();
+			Set<Map.Entry<String, User>> set = map.entrySet();
+
+			Iterator<Map.Entry<String, User>> iteratoranswer = set.iterator();
+			while (iteratoranswer.hasNext()) {
+				Map.Entry<String, User> entry = (Map.Entry<String, User>) iteratoranswer
+						.next();
+				System.out.println("answer name:" + entry.getKey());
+				System.out.println("answer posted by.........");
+				User user = entry.getValue();
+				System.out.println("username:" + user.getUsername());
+				System.out.println("user emailid:" + user.getEmail());
+				System.out.println("user country:" + user.getCountry());
+			}
+		}
+		session.close();
+	}
+}

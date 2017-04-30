@@ -1,0 +1,7 @@
+package com.yiibai;
+
+public class Answer {
+	private int id;
+	private String answername;
+	private String postedBy;
+}

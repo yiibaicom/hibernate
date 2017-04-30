@@ -1,0 +1,23 @@
+package com.yiibai;
+
+import java.lang.*;
+
+public class TestThread {
+
+  public static void main(String[] args) {
+ 
+    String str = "This is yiibai";
+
+    // returns positive value as character is located
+    System.out.println("index of letter 't' =  "
+    + str.indexOf('t', 14)); 
+      
+    // returns positive value as character is located
+    System.out.println("index of letter 's' =  "
+    + str.indexOf('s', 10)); 
+      
+    // returns -1 as character is not in the string
+    System.out.println("index of letter 'e' =  "
+    + str.indexOf('e', 5));
+  }
+}

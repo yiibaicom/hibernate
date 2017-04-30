@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.javatpoint.Question" table="q100">
+		<id name="id">
+			<generator class="increment"></generator>
+		</id>
+		<property name="qname"></property>
+
+		<list name="answers" table="ans100">
+			<key column="qid"></key>
+			<index column="type"></index>
+			<element column="answer" type="string"></element>
+		</list>
+
+	</class>
+
+
+
+</hibernate-mapping>

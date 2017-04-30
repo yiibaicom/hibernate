@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE variables>
+
+<variables>
+  <variable name="classname" pattern="^(\w*)$" systemvariable="classname" />
+  <variable name="classnameWithoutSuffix" pattern="^(\w*)Bean$" systemvariable="classname" />
+  <variable name="package" pattern="^(\\S*)$" systemvariable="package" />
+  <variable name="packageWithoutLast" pattern="^(\\S*)\\.\\w*$" systemvariable="package" />
+</variables>
+

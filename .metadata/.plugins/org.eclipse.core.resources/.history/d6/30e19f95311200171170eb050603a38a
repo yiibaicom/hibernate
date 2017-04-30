@@ -1,0 +1,69 @@
+package com.yiibai;
+
+import java.util.ArrayList;
+
+import org.hibernate.*;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.*;
+
+public class MainTest {
+	public static void main(String[] args) {
+		// 但在5.1.0版本汇总，hibernate则采用如下新方式获取：
+		// 1. 配置类型安全的准服务注册类，这是当前应用的单例对象，不作修改，所以声明为final
+		// 在configure("cfg/hibernate.cfg.xml")方法中，如果不指定资源路径，默认在类路径下寻找名为hibernate.cfg.xml的文件
+		final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+				.configure("hibernate.cfg.xml").build();
+		// 2. 根据服务注册类创建一个元数据资源集，同时构建元数据并生成应用一般唯一的的session工厂
+		SessionFactory sessionFactory = new MetadataSources(registry)
+				.buildMetadata().buildSessionFactory();
+
+		/**** 上面是配置准备，下面开始我们的数据库操作 ******/
+		Session session = sessionFactory.openSession();// 从会话工厂获取一个session
+
+		// creating transaction object
+		Transaction t = session.beginTransaction();
+
+		Answer ans1 = new Answer();
+		ans1.setAnswername("java is a programming language");
+		ans1.setPostedBy("Ravi Su");
+
+		Answer ans2 = new Answer();
+		ans2.setAnswername("java is a platform");
+		ans2.setPostedBy("Sudhir Lee");
+
+		Answer ans3 = new Answer();
+		ans3.setAnswername("Servlet is an Interface");
+		ans3.setPostedBy("Jai Wong");
+
+		Answer ans4 = new Answer();
+		ans4.setAnswername("Servlet is an API");
+		ans4.setPostedBy("Arun");
+
+		ArrayList<Answer> list1 = new ArrayList<Answer>();
+		list1.add(ans1);
+		list1.add(ans2);
+
+		ArrayList<Answer> list2 = new ArrayList<Answer>();
+		list2.add(ans3);
+		list2.add(ans4);
+
+		Question question1 = new Question();
+		question1.setQname("What is Java?");
+		question1.setAnswers(list1);
+
+		Question question2 = new Question();
+		question2.setQname("What is Servlet?");
+		question2.setAnswers(list2);
+
+		session.persist(question1);
+		session.persist(question2);
+
+		t.commit();
+		session.close();
+		
+		System.out.println("success");
+
+	}
+}

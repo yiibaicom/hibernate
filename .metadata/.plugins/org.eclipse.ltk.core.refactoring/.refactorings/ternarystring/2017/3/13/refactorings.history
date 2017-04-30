@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.yiibai.StoreTest.java&apos; to &apos;MainTest.java&apos;&#x0D;&#x0A;- Original project: &apos;ternarystring&apos;&#x0D;&#x0A;- Original element: &apos;com.yiibai.StoreTest.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.yiibai.MainTest.java&apos;" description="Rename compilation unit &apos;StoreTest.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;com.yiibai{StoreTest.java" name="MainTest.java" references="false" stamp="1490552549085" version="1.0"/>
+</session>

@@ -1,0 +1,12 @@
+package com.yiibai;
+
+public class Answer {
+	private int id;  
+	private String answername;  
+	private String postedBy;  
+	private int qid;
+	private Question question;
+	
+	
+	
+}

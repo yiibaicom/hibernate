@@ -1,0 +1,5 @@
+INDEX VERSION 1.126
+F:\worksp\hibernate\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3469576004.index
+\hibernate-struts2 Maven Webapp\src\main\resources
+F:\worksp\hibernate\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3734814699.index
+\strutsinteg\src

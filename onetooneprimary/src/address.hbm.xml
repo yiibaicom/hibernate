@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.yiibai.Address" table="address_2120">
+		<id name="addressId">
+			<generator class="foreign">
+				<param name="property">employee</param>
+			</generator>
+		</id>
+		<property name="addressLine1"></property>
+		<property name="city"></property>
+		<property name="state"></property>
+		<property name="country"></property>
+
+		<one-to-one name="employee" cascade="all"></one-to-one>
+	</class>
+
+</hibernate-mapping>
